@@ -1,6 +1,9 @@
 # apple_fitness_flutter
 
-A new Flutter project.
+A new Flutter project. crossing platform for iOS and Android
+
+
+Apple Fitness reference site: https://apps.apple.com/cn/app/%E5%81%A5%E8%BA%AB/id1208224953
 
 ## Getting Started
 
