@@ -1,3 +1,4 @@
+import 'package:apple_fitness_flutter/components/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'components/fapp_bottom_bar.dart';
 
@@ -13,8 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: "test",
-      debugShowCheckedModeBanner: true,
-      home: const FAppBottomBar(),
+      debugShowCheckedModeBanner: false,
+      home: WelcomeScreen(), // const FAppBottomBar(),
     );
   }
 }

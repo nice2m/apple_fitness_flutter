@@ -17,7 +17,7 @@ class _FAppBottomBarState extends State<FAppBottomBar> {
     const SummaryScreen(),
     const ShareScreen(),
   ];
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
