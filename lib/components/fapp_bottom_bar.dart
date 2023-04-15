@@ -1,5 +1,6 @@
 import 'package:apple_fitness_flutter/screens/share_screen.dart';
 import 'package:apple_fitness_flutter/screens/summary_screen.dart';
+import 'package:apple_fitness_flutter/utils/app_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -25,27 +26,34 @@ class _FAppBottomBarState extends State<FAppBottomBar> {
         child: _screens[_selectedScreenIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
-        items: const [
+        selectedItemColor:AppColor.primary ,
+        unselectedItemColor: AppColor.subtitle,
+        backgroundColor: AppColor.primaryBg,
+        currentIndex: _selectedScreenIndex,
+        items: [
           BottomNavigationBarItem(
             label: "概要",
-              icon: Icon(
-                Icons.circle_outlined,
-                color: Colors.blueGrey,
+              icon: Image.asset("assets/images/ring_icon.png",
+              height: 24,
+              width: 24,
+              color: AppColor.subtitle,
               ),
-              activeIcon: Icon(
-                Icons.circle_outlined,
-                color: Colors.lightBlue,
+              activeIcon: Image.asset("assets/images/ring_icon.png",
+              height: 24,
+              width: 24,
+              color: AppColor.primary,
               )),
           BottomNavigationBarItem(
             label: "共享",
-              icon: Icon(
-                Icons.share,
-                color: Colors.blueGrey,
+              icon: Image.asset("assets/images/share_icon.png",
+              width: 24,
+              height: 24,
+              color: AppColor.subtitle,
               ),
-              activeIcon: Icon(
-                Icons.share,
-                color: Colors.lightBlue,
+              activeIcon: Image.asset("assets/images/share_icon.png",
+              width: 24,
+              height: 24,
+              color: AppColor.primary,
               ))
         ],
         onTap: bottomNavigationBarOnTap,
@@ -55,6 +63,7 @@ class _FAppBottomBarState extends State<FAppBottomBar> {
 
   void bottomNavigationBarOnTap(int index) {
     _selectedScreenIndex = index;
+    
     setState(() {});
   }
 }

@@ -1,5 +1,3 @@
-import 'dart:io';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -37,13 +35,27 @@ class AppColor {
   // 副标题颜色 灰色
   static const subtitle = Color(0xFF868488);
 
+  static const subtitle2 = Color(0xFFA1A0A7);
+
   // 基础色 绿色
   static const primary = Color(0xFFABFD33);
   // 基础背景色 深灰色
   static const primaryBg = Color(0xFF1F1C21);
+
+  static const primaryBg2 = Color(0xFF080508);
+
+  static const primaryBg3 = Color(0xFF1F1C21);
+
+  static const gray0 = Color(0xFF2E2B2E);
+
+  static const gray1 = Color(0xFF505052);
+
+  static const gray2 = Color(0xFF7F7E85);
 }
 
 class AppTextStyle {
+  static const headLine0 = TextStyle(
+      fontSize: 38, fontWeight: FontWeight.w800, color: AppColor.title);
   static const headLine1 = TextStyle(
       fontSize: 28, fontWeight: FontWeight.w800, color: AppColor.title);
   static const headLine2 = TextStyle(
@@ -51,6 +63,10 @@ class AppTextStyle {
 
   static const title = TextStyle(
       fontSize: 17, fontWeight: FontWeight.w700, color: AppColor.title);
+  static const title2 = TextStyle(
+      fontSize: 70, fontWeight: FontWeight.w300, color: AppColor.subtitle2);
   static const subTitle = TextStyle(
       fontSize: 16, fontWeight: FontWeight.normal, color: AppColor.subtitle);
+  static const subTitle2 = TextStyle(
+      fontSize: 20, fontWeight: FontWeight.normal, color: AppColor.subtitle);
 }

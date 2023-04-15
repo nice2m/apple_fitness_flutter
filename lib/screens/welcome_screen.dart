@@ -73,7 +73,6 @@ class WelcomeScreen extends StatelessWidget {
   }
 
   continueOnTap() {
-    print("continueOnTap");
     continueCallBack();
   }
 }
