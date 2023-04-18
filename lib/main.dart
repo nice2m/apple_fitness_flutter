@@ -39,7 +39,7 @@ class _FAppState extends State<FApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        color: AppColor.primaryBg,
+        color: AppColor.primaryContainerBg,
         debugShowCheckedModeBanner: true,
         home: Builder(builder: (BuildContext context) {
           return getHome(context);
@@ -65,16 +65,14 @@ class _FAppState extends State<FApp> {
         return WelcomeScreen(continueCallBack: () {
           screen = FAppScreens.grantNotification;
           setState(() {
-            updateStorage(shownWelcomeGetStorageKey
-            , "1");
+            updateStorage(shownWelcomeGetStorageKey, "1");
           });
         });
       case FAppScreens.grantNotification:
         return GrantNotificationScreen(continueCallBack: () {
           screen = FAppScreens.normal;
           setState(() {
-            updateStorage(shownGrantNotificationAccessKey
-            , "1");
+            updateStorage(shownGrantNotificationAccessKey, "1");
           });
         });
       default:

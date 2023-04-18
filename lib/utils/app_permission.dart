@@ -1,16 +1,13 @@
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-
-
 enum AppPermissionState {
-  
-  final int state;
-  const AppPermissionState(this.state);
-
   notDetermined(0),
   succeed(1),
-  rejected(2),
+  rejected(2);
+
+  final int state;
+  const AppPermissionState(this.state);
 }
 
 class AppPermission extends StatelessWidget {
@@ -21,7 +18,5 @@ class AppPermission extends StatelessWidget {
     return const Placeholder();
   }
 
-  static requestForNotificaitonPermission(VoidCallback callback) {
-
-  }
+  static requestForNotificaitonPermission(VoidCallback callback) {}
 }

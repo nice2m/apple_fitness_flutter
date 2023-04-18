@@ -46,6 +46,9 @@ class AppColor {
 
   static const primaryBg3 = Color(0xFF1F1C21);
 
+  // controller 基础容器，背景色
+  static const primaryContainerBg = Color(0xFF020002);
+
   static const gray0 = Color(0xFF2E2B2E);
 
   static const gray1 = Color(0xFF505052);
@@ -56,17 +59,22 @@ class AppColor {
 class AppTextStyle {
   static const headLine0 = TextStyle(
       fontSize: 38, fontWeight: FontWeight.w800, color: AppColor.title);
+
   static const headLine1 = TextStyle(
       fontSize: 28, fontWeight: FontWeight.w800, color: AppColor.title);
+
   static const headLine2 = TextStyle(
       fontSize: 18, fontWeight: FontWeight.w600, color: AppColor.title);
 
   static const title = TextStyle(
       fontSize: 17, fontWeight: FontWeight.w700, color: AppColor.title);
+
   static const title2 = TextStyle(
       fontSize: 70, fontWeight: FontWeight.w300, color: AppColor.subtitle2);
+
   static const subTitle = TextStyle(
       fontSize: 16, fontWeight: FontWeight.normal, color: AppColor.subtitle);
+
   static const subTitle2 = TextStyle(
       fontSize: 20, fontWeight: FontWeight.normal, color: AppColor.subtitle);
 }
