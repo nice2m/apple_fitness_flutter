@@ -46,6 +46,8 @@ class AppColor {
 
   static const primaryBg3 = Color(0xFF1F1C21);
 
+  static const primaryRed = Color(0xFFFD1153);
+
   // controller 基础容器，背景色
   static const primaryContainerBg = Color(0xFF020002);
 
@@ -74,6 +76,9 @@ class AppTextStyle {
 
   static const subTitle = TextStyle(
       fontSize: 16, fontWeight: FontWeight.normal, color: AppColor.subtitle);
+
+  static const subtitle3 = TextStyle(
+      fontSize: 16, fontWeight: FontWeight.normal, color: AppColor.title);
 
   static const subTitle2 = TextStyle(
       fontSize: 20, fontWeight: FontWeight.normal, color: AppColor.subtitle);

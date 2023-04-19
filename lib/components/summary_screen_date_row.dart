@@ -9,7 +9,7 @@ class SummaryScreenDateRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColor.primaryBg,
+      color: AppColor.primaryContainerBg,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(children: [
