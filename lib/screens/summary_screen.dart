@@ -26,7 +26,7 @@ class _SummaryScreenState extends State<SummaryScreen> {
       child: CustomScrollView(
         slivers: [
           const SliverAppBar(
-            backgroundColor: AppColor.primaryBg,
+            backgroundColor: AppColor.primaryContainerBg,
             title: const Text(
               "概要",
               style: AppTextStyle.title,
@@ -79,7 +79,7 @@ class _SummaryScreenState extends State<SummaryScreen> {
                               ),
                             ],
                           ),
-                        )
+                        ),
                       ],
                     );
                   }),
