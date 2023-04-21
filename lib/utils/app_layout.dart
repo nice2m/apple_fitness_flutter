@@ -78,7 +78,14 @@ class AppTextStyle {
       fontSize: 16, fontWeight: FontWeight.normal, color: AppColor.subtitle);
 
   static const subtitle3 = TextStyle(
+      fontSize: 17, fontWeight: FontWeight.normal, color: AppColor.title);
+
+  static const subtitle4 = TextStyle(
       fontSize: 16, fontWeight: FontWeight.normal, color: AppColor.title);
+
+  static const subtitle5 = TextStyle(
+      fontSize: 13, fontWeight: FontWeight.normal, color: AppColor.subtitle2);
+
 
   static const subTitle2 = TextStyle(
       fontSize: 20, fontWeight: FontWeight.normal, color: AppColor.subtitle);

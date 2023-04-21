@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
@@ -13,10 +14,12 @@ enum AppPermissionState {
 class AppPermission extends StatelessWidget {
   const AppPermission({super.key});
 
+  static requestForNotificaitonPermission(VoidCallback callback) {
+
+  }
+  
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    throw Text('');
   }
-
-  static requestForNotificaitonPermission(VoidCallback callback) {}
 }

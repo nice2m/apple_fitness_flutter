@@ -7,11 +7,12 @@ typedef SummaryScreenTitledRowBuilder = Widget Function(
     BuildContext context, BoxConstraints boxConstraints);
 
 class SummaryScreenTitledRow extends StatelessWidget {
-  final String titleString;
+  final String? titleString;
   final SummaryScreenTitledRowBuilder contentBuilder;
+  final SummaryScreenTitledRowBuilder? titleBuilder;
 
   const SummaryScreenTitledRow(
-      {super.key, required this.titleString, required this.contentBuilder});
+      {super.key,this.titleString, required this.contentBuilder,this.titleBuilder});
 
   @override
   Widget build(BuildContext context) {
@@ -21,15 +22,19 @@ class SummaryScreenTitledRow extends StatelessWidget {
       margin: const EdgeInsets.only(top: 8, left: 8, right: 8),
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text(
-                titleString,
-                style: AppTextStyle.headLine1,
-              ),
-            ],
-          ),
+          (titleBuilder != null
+              ? LayoutBuilder(builder: (context, boxconstraints) {
+                  return titleBuilder!(context, boxconstraints);
+                })
+              : Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      titleString != null ? titleString! : "",
+                      style: AppTextStyle.headLine1,
+                    ),
+                  ],
+                )),
           const SizedBox(
             height: 8,
           ),

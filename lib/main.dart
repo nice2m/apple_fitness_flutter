@@ -13,7 +13,6 @@ import './constant/keys.dart';
 
 void main() async {
   await initStorage();
-
   runApp(const FApp());
 }
 
@@ -39,7 +38,7 @@ class _FAppState extends State<FApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        color: AppColor.primaryContainerBg,
+        color: AppColor.primaryBg,
         debugShowCheckedModeBanner: true,
         home: Builder(builder: (BuildContext context) {
           return getHome(context);
@@ -65,14 +64,16 @@ class _FAppState extends State<FApp> {
         return WelcomeScreen(continueCallBack: () {
           screen = FAppScreens.grantNotification;
           setState(() {
-            updateStorage(shownWelcomeGetStorageKey, "1");
+            updateStorage(shownWelcomeGetStorageKey
+            , "1");
           });
         });
       case FAppScreens.grantNotification:
         return GrantNotificationScreen(continueCallBack: () {
           screen = FAppScreens.normal;
           setState(() {
-            updateStorage(shownGrantNotificationAccessKey, "1");
+            updateStorage(shownGrantNotificationAccessKey
+            , "1");
           });
         });
       default:
