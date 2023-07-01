@@ -12,23 +12,20 @@ class ShareScreen extends StatefulWidget {
 }
 
 class _ShareScreenState extends State<ShareScreen> {
-  int _selectIndex = 0;
+  var _selectIndex = 1;
   var _screens;
 
-  final grantShareRecordsScreen = GrantShareRecordsScreen(continueCallBack: (){
-
-  });
+  final grantShareRecordsScreen =
+      GrantShareRecordsScreen(continueCallBack: () {});
 
   final shareRecordsScreen = ShareRecordsScreen();
 
   @override
   void initState() {
-    _screens = [
-      grantShareRecordsScreen,
-      shareRecordsScreen
-    ];
+    _screens = [grantShareRecordsScreen, shareRecordsScreen];
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return _screens[_selectIndex];
