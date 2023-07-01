@@ -62,8 +62,8 @@ class _FAppBottomBarState extends State<FAppBottomBar> {
   }
 
   void bottomNavigationBarOnTap(int index) {
-    _selectedScreenIndex = index;
-    
-    setState(() {});
+    setState(() {
+      _selectedScreenIndex = index;
+    });
   }
 }
