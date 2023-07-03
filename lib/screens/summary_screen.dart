@@ -1,4 +1,6 @@
+import 'package:apple_fitness_flutter/components/circle_progress_indicator.dart';
 import 'package:apple_fitness_flutter/components/summary_screen_date_row.dart';
+import 'package:apple_fitness_flutter/components/summary_screen_progress_indicator.dart';
 import 'package:apple_fitness_flutter/components/summary_screen_titled_row.dart';
 import 'package:apple_fitness_flutter/entities/summary_screen_display_entities.dart';
 import 'package:apple_fitness_flutter/utils/app_layout.dart';
@@ -42,11 +44,17 @@ class _SummaryScreenState extends State<SummaryScreen> {
               buildFitRecordRow(context),
               buildTrendRow(context),
               buildOnPrizeIcons(context),
+              SizedBox(height: AppLayout.width(20),),
             ]),
           )
         ],
       ),
     );
+  }
+
+  // data
+  double getPorgress() {
+    return 0.66;
   }
 
   // 
@@ -96,9 +104,12 @@ class _SummaryScreenState extends State<SummaryScreen> {
                             ],
                           ),
                         ),
-                        Placeholder(
-                          fallbackWidth: 120,
-                          fallbackHeight: 120,
+                        
+                        Container(
+                          
+                          width: 140,
+                          height: 140,
+                          child: SummaryScreenProgressIndicator(progress: getPorgress())
                         )
                       ],
                     );
@@ -109,9 +120,7 @@ class _SummaryScreenState extends State<SummaryScreen> {
     return SummaryScreenTitledRow(titleString: "趋势", contentBuilder: (context,constraints) {
                 return Column(
                   children: [
-                    Placeholder(
-                      fallbackHeight: 100,
-                    ),
+                    
                     SizedBox(
                       // height: 60,
                       child: Padding(

@@ -30,6 +30,7 @@ class AppLayout {
 }
 
 class AppColor {
+  
   //  标题颜色 白色
   static const title = Color(0xFFFFFFFF);
   // 副标题颜色 灰色
@@ -47,6 +48,9 @@ class AppColor {
   static const primaryBg3 = Color(0xFF1F1C21);
 
   static const primaryRed = Color(0xFFFD1153);
+
+  // app 中默认黑色
+  static const primaryBlack = Color(0xff000102);
 
   // controller 基础容器，背景色
   static const primaryContainerBg = Color(0xFF020002);

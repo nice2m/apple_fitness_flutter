@@ -12,7 +12,7 @@ class ShareScreen extends StatefulWidget {
 }
 
 class _ShareScreenState extends State<ShareScreen> {
-  var _selectIndex = 1;
+  var _selectIndex = 0;
   var _screens;
 
   final grantShareRecordsScreen =

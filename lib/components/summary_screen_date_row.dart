@@ -54,10 +54,21 @@ class SummaryScreenDateRow extends StatelessWidget {
   }
 
   String dateString() {
-    return "4月13日";
+    final date  = DateTime.now();
+    return "${date.month}月${date.day}日";
   }
 
   String dayString() {
-    return "星期四";
+     final date  = DateTime.now();
+     final daysDes = [
+      "周日",
+      "周一",
+      "周二",
+      "周三",
+      "周四",
+      "周五",
+      "周六",
+     ];
+    return daysDes[date.weekday];
   }
 }

@@ -1,7 +1,7 @@
+import 'package:apple_fitness_flutter/components/circle_progress_indicator.dart';
 import 'package:apple_fitness_flutter/components/welcome_screen_row.dart';
 import 'package:apple_fitness_flutter/utils/app_layout.dart';
-import 'package:apple_fitness_flutter/utils/app_ring_progress_painter.dart';
-import 'package:apple_fitness_flutter/utils/progress_controller.dart';
+
 import 'package:flutter/material.dart';
 
 class GrantShareRecordsScreen extends StatefulWidget {
@@ -14,39 +14,12 @@ class GrantShareRecordsScreen extends StatefulWidget {
       _GrantShareRecordsScreenState();
 }
 
-class _GrantShareRecordsScreenState extends State<GrantShareRecordsScreen>
-    with TickerProviderStateMixin {
-  final controller = ProgressController();
-
-  late AnimationController wareController;
-
-  late Animation<double> waveAnimation;
-
+class _GrantShareRecordsScreenState extends State<GrantShareRecordsScreen> {
   double currentProgress = 0.0;
 
   @override
   void initState() {
     super.initState();
-
-    wareController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 1200),
-    );
-
-    controller.stream.listen((event) {
-      print("stream.listen");
-      print(event);
-      wareController.reset();
-      waveAnimation = Tween(begin: currentProgress, end: event as double)
-          .animate(wareController);
-      currentProgress = event;
-      wareController.forward();
-    });
-
-    waveAnimation = Tween(begin: currentProgress, end: currentProgress)
-        .animate(wareController);
-
-    wareController.forward();
   }
 
   @override
@@ -60,30 +33,20 @@ class _GrantShareRecordsScreenState extends State<GrantShareRecordsScreen>
               children: [
                 Container(
                   child: Column(children: [
-                    SizedBox(height: 72),
-                    Container(
-                      child: AnimatedBuilder(
-                          animation: waveAnimation,
-                          builder: (BuildContext context, Widget? child) {
-                            return Center(
-                              child: Container(
-                                width: 192,
-                                height: 192,
-                                child: Stack(
-                                  children: [
-                                    RepaintBoundary(
-                                      child: CustomPaint(
-                                        size: const Size(192, 192),
-                                        painter: AppRingProgressPainter(
-                                            AppColor.primaryRed,
-                                            waveAnimation.value),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
-                          }),
+                    SizedBox(height: 102),
+                    Center(
+                      child: Container(
+                        width: 200,
+                        height: 200,
+                        child: TweenAnimationBuilder(
+                          tween: Tween(begin: 0.0,end: 0.66), 
+                          duration: const Duration(seconds: 3), 
+                          builder:(BuildContext context, value, Widget? child){
+                          print("value now is ${value}");
+
+                          return CircleProgressIndicator(progress: value, radius: 50, bgColor: Colors.lightBlue, progressWidth: 10.0,);
+                        }),
+                      ),
                     ),
                     Padding(
                       padding:
