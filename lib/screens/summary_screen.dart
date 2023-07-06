@@ -120,9 +120,7 @@ class _SummaryScreenState extends State<SummaryScreen> {
     return SummaryScreenTitledRow(titleString: "趋势", contentBuilder: (context,constraints) {
                 return Column(
                   children: [
-                    
                     SizedBox(
-                      // height: 60,
                       child: Padding(
                         padding: const EdgeInsets.only(top: 16,left: 0, bottom: 8,right: 0),
                         child: Text(
