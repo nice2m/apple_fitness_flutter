@@ -107,7 +107,6 @@ class _SummaryScreenState extends State<SummaryScreen> {
                         ),
                         
                         Container(
-                          
                           width: 140,
                           height: 140,
                           child: SummaryScreenProgressIndicator(progress: getPorgress())
@@ -192,9 +191,7 @@ class _SummaryScreenState extends State<SummaryScreen> {
   }
   
   void onPrizeIconShowMoreTap() {
-    print("onPrizeIconShowMoreTap");
-    // 
-    
+    //
     Navigator.of(context).push(
     MaterialPageRoute(
       builder: (context) => const PrizeIconListScreen(),
