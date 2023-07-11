@@ -3,6 +3,7 @@ import 'package:apple_fitness_flutter/components/summary_screen_date_row.dart';
 import 'package:apple_fitness_flutter/components/summary_screen_progress_indicator.dart';
 import 'package:apple_fitness_flutter/components/summary_screen_titled_row.dart';
 import 'package:apple_fitness_flutter/entities/summary_screen_display_entities.dart';
+import 'package:apple_fitness_flutter/screens/prize_icon_list_screen.dart';
 import 'package:apple_fitness_flutter/utils/app_layout.dart';
 import '../components/summary_screen_prize_grid_item.dart';
 import 'package:flutter/gestures.dart';
@@ -192,5 +193,12 @@ class _SummaryScreenState extends State<SummaryScreen> {
   
   void onPrizeIconShowMoreTap() {
     print("onPrizeIconShowMoreTap");
+    // 
+    
+    Navigator.of(context).push(
+    MaterialPageRoute(
+      builder: (context) => const PrizeIconListScreen(),
+    ),
+  );
   }
 }
