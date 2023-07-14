@@ -18,6 +18,7 @@ class _PrizeIconListScreenState extends State<PrizeIconListScreen> {
   @override
   void initState() {
     super.initState();
+
     PrizePageItemEntity.pages.then((value){
       setState(() {
         list = value;

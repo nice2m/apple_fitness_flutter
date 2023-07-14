@@ -72,8 +72,9 @@ class PrizeItemEntity {
   late String title;
   late String subTitle;
   late bool archived;
+  late String archiveDes;
 
-  PrizeItemEntity({required this.id,required this.title,required this.subTitle,required this.archived});
+  PrizeItemEntity({required this.id,required this.title,required this.subTitle,required this.archived,required this.archiveDes});
 
   String get iconName => "assets/images/prizeIcon/prizeIcon$id.png";
 
@@ -82,6 +83,7 @@ class PrizeItemEntity {
     title = json['title'];
     subTitle = json['subTitle'];
     archived = json['archived'];
+    archiveDes = json['archiveDes'];
   }
 
   Map<String, dynamic> toJson() {
@@ -90,6 +92,7 @@ class PrizeItemEntity {
     data['title'] = this.title;
     data['subTitle'] = this.subTitle;
     data['archived'] = this.archived;
+    data['archiveDes'] = this.archiveDes;
     return data;
   }
 }

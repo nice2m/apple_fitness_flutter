@@ -130,9 +130,9 @@ class _SummaryScreenState extends State<SummaryScreen> {
             children: [
               SizedBox(
                 child: Padding(
-                  padding: const EdgeInsets.only(
-                      top: 16, left: 0, bottom: 8, right: 0),
-                  child: Text(
+                  padding: EdgeInsets.only(
+                      top: AppLayout.height(16), left: 0, bottom: 8, right: 0),
+                  child: const Text(
                     "每天合上圆环是保持活跃的良策。趋势肩头可提供更多健身详情来持续激励你。",
                     style: AppTextStyle.subtitle3,
                     maxLines: 2,
@@ -167,7 +167,7 @@ class _SummaryScreenState extends State<SummaryScreen> {
       return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
+          const Text(
             "奖章",
             style: AppTextStyle.headLine1,
           ),

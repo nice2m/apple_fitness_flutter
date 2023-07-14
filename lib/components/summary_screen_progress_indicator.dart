@@ -1,8 +1,6 @@
 import 'package:apple_fitness_flutter/components/circle_progress_indicator.dart';
 import 'package:apple_fitness_flutter/utils/app_layout.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:rive/rive.dart';
 
 class SummaryScreenProgressIndicator extends StatelessWidget {
@@ -25,14 +23,13 @@ class SummaryScreenProgressIndicator extends StatelessWidget {
             return CircleProgressIndicator(progress: value, radius: radius, bgColor: forColor,progressWidth: progressWidth,);
           },),
           // rive animated
-          Positioned(
+          const Positioned(
             top: 0,
             left: (140 - 10) / 2.0,
             width: 20,
             height: 20,
             child: RiveAnimation.asset('assets/animation/Rive/red-circle-arrow.riv')
           ),
-          
       ],
     );
   }
