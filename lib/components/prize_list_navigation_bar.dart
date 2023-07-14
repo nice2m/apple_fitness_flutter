@@ -14,15 +14,25 @@ class PrizeListNavigationBarTitle extends StatelessWidget{
       onTap: () => {
         backOnTap()
       },
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Icon(Icons.arrow_back_ios,color: tintColor),
-          SizedBox(width: AppLayout.width(8),),
-          Text(titleText,style: AppTextStyle.title.copyWith(color: tintColor),)
-        ],
+      child: Padding(
+        padding: const EdgeInsets.only(left:8),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(Icons.arrow_back_ios, color: tintColor),
+            Text(titleText,style: AppTextStyle.title.copyWith(color: tintColor),)
+          ],
+        ),
       ),
+      // child: Row(
+      //   mainAxisAlignment: MainAxisAlignment.start,
+      //   crossAxisAlignment: CrossAxisAlignment.center,
+      //   children: [
+      //     Icon(Icons.arrow_back_ios, color: tintColor),
+      //     Text(titleText,style: AppTextStyle.title.copyWith(color: tintColor),)
+      //   ],
+      // ),
     );
   }
 }

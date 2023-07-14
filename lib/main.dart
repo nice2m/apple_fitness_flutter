@@ -16,7 +16,7 @@ void main() async {
   runApp(const FApp());
 }
 
-// 参考 constant/keys.dart
+// 定义参考 constant/keys.dart
 enum FAppScreens {
   // 常规展示主页，已经提示经过了欢迎通知介绍页，健身介绍
   normal(0),
