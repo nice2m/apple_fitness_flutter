@@ -1,4 +1,4 @@
-import 'package:apple_fitness_flutter/components/prize_list_navigation_bar.dart';
+import 'package:apple_fitness_flutter/components/fapp_bar.dart';
 import 'package:apple_fitness_flutter/components/prize_title_grid_view.dart';
 import 'package:apple_fitness_flutter/entities/prize_page_item_entity.dart';
 import 'package:apple_fitness_flutter/screens/prize_icon_detail_screen.dart';
@@ -30,17 +30,9 @@ class _PrizeIconListScreenState extends State<PrizeIconListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: AppColor.primaryContainerBg,
-        appBar: AppBar(
-          backgroundColor: AppColor.primaryBlack,
-          automaticallyImplyLeading: false,
-          leadingWidth: 100,
-          leading: PrizeListNavigationBarTitle(
-              titleText: "概要",
-              backOnTap: () {
-                Navigator.of(context).pop();
-              },
-              tintColor: AppColor.primary),
-        ) ,
+        appBar: FAppBar.backTitled("概要", () {
+          Navigator.of(context).pop();
+        }, null),
         body: CustomScrollView(
           slivers: _generateTitleAndGrids("奖章", list),
         ));

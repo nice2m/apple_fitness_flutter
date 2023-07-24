@@ -5,16 +5,13 @@ import 'package:flutter/services.dart' show rootBundle;
 * ref: https://dart.dev/language/enums
 * */
 enum PrizeCate implements Comparable<PrizeCate> {
-  workingOn(displayName:"加油", id: 0),
+  workingOn(displayName: "加油", id: 0),
   finished(displayName: "合上进度圆环", id: 1),
   mothlyChallenge(displayName: "每月挑战", id: 2),
   bodyEnergyExecise(displayName: "体能训练", id: 3),
   competetion(displayName: "竞赛", id: 4);
 
-  const PrizeCate({
-    required this.displayName,
-    required this.id
-  });
+  const PrizeCate({required this.displayName, required this.id});
 
   final String displayName;
   final int id;
@@ -27,12 +24,10 @@ class PrizePageItemEntity {
   late int cateId;
   late List<PrizeItemEntity> item;
 
-  PrizePageItemEntity({
-    required this.cateId,
-    required this.item});
+  PrizePageItemEntity({required this.cateId, required this.item});
 
   String get displayName {
-    final cateIdTmp = cateId != null ? cateId! : 0;
+    final cateIdTmp = cateId ?? 0;
 
     return PrizeCate.values[cateIdTmp].displayName;
   }
@@ -43,7 +38,8 @@ class PrizePageItemEntity {
 
   static Future<List<PrizePageItemEntity>> get pages async {
     Iterable l = json.decode(await getJson());
-    List<PrizePageItemEntity> retList = List<PrizePageItemEntity>.from(l.map((model) => PrizePageItemEntity.fromJson(model)));
+    List<PrizePageItemEntity> retList = List<PrizePageItemEntity>.from(
+        l.map((model) => PrizePageItemEntity.fromJson(model)));
     return Future.value(retList);
   }
 
@@ -52,7 +48,7 @@ class PrizePageItemEntity {
     if (json['item'] != null) {
       item = <PrizeItemEntity>[];
       json['item'].forEach((v) {
-        item!.add(new PrizeItemEntity.fromJson(v));
+        item.add(new PrizeItemEntity.fromJson(v));
       });
     }
   }
@@ -74,7 +70,12 @@ class PrizeItemEntity {
   late bool archived;
   late String archiveDes;
 
-  PrizeItemEntity({required this.id,required this.title,required this.subTitle,required this.archived,required this.archiveDes});
+  PrizeItemEntity(
+      {required this.id,
+      required this.title,
+      required this.subTitle,
+      required this.archived,
+      required this.archiveDes});
 
   String get iconName => "assets/images/prizeIcon/prizeIcon$id.png";
 

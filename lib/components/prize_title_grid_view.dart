@@ -1,20 +1,19 @@
 import 'dart:math';
 import 'package:apple_fitness_flutter/components/prize_title_grid_item_view.dart';
 import 'package:apple_fitness_flutter/entities/prize_page_item_entity.dart';
-import 'package:apple_fitness_flutter/screens/prize_icon_detail_screen.dart';
 import 'package:apple_fitness_flutter/utils/app_layout.dart';
 import 'package:flutter/material.dart';
 
 typedef PrizeGridTitlViewOnClick = Function(PrizePageItemEntity,PrizeItemEntity);
+
 class PrizeGridTitlView extends StatelessWidget {
   final PrizePageItemEntity entity;
   final PrizeGridTitlViewOnClick itemOnClick;
 
-  const PrizeGridTitlView({Key? key, required this.entity, required this.itemOnClick});
+  const PrizeGridTitlView({super.key, required this.entity, required this.itemOnClick});
 
   @override
   Widget build(BuildContext context) {
-    final blueRandom = Random().nextInt(200);
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,

@@ -5,6 +5,7 @@ import 'package:apple_fitness_flutter/components/summary_screen_titled_row.dart'
 import 'package:apple_fitness_flutter/entities/prize_page_item_entity.dart';
 import 'package:apple_fitness_flutter/screens/prize_icon_detail_screen.dart';
 import 'package:apple_fitness_flutter/screens/prize_icon_list_screen.dart';
+import 'package:apple_fitness_flutter/trend_page/screen/trend_page.dart';
 import 'package:apple_fitness_flutter/utils/app_layout.dart';
 import 'package:flutter/material.dart';
 
@@ -148,7 +149,7 @@ class _SummaryScreenState extends State<SummaryScreen> {
                         .copyWith(color: AppColor.primary),
                   ),
                 ),
-                onTap: () => _onStartTap(),
+                onTap: () => _trendOnStartTap(),
               ),
             ],
           );
@@ -192,12 +193,17 @@ class _SummaryScreenState extends State<SummaryScreen> {
     }));
   }
 
-  void _onStartTap() {
-    print("onStartTap");
+  void _trendOnStartTap() {
+    // 跳转trend 趋势页
+    Navigator.of(context).push(
+      MaterialPageRoute(
+          builder: (context) => const TrendPage()
+      )
+    );
   }
 
   void _onPrizeIconShowMoreTap() {
-    //
+    // 跳转奖牌列表页
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => const PrizeIconListScreen(),

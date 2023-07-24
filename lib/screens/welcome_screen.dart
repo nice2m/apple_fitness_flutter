@@ -19,8 +19,8 @@ class WelcomeScreen extends StatelessWidget {
             SizedBox(
               height: AppLayout.height(96),
             ),
-            Row(
-              children: const [
+            const Row(
+              children: [
                 Expanded(
                     child: Center(
                         child: Text(

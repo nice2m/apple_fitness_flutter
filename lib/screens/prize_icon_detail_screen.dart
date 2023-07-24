@@ -1,12 +1,7 @@
-import 'dart:async';
-import 'dart:math';
-
-import 'package:apple_fitness_flutter/components/circle_progress_indicator.dart';
-import 'package:apple_fitness_flutter/components/prize_list_navigation_bar.dart';
+import 'package:apple_fitness_flutter/components/fapp_bar.dart';
 import 'package:apple_fitness_flutter/entities/prize_page_item_entity.dart';
 import 'package:apple_fitness_flutter/utils/app_layout.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class PrizeItemDetailScreen extends StatefulWidget {
   final PrizePageItemEntity? page;
@@ -21,7 +16,8 @@ class PrizeItemDetailScreen extends StatefulWidget {
 class _PrizeItemDetailScreenState extends State<PrizeItemDetailScreen> {
   double x = 0;
   bool isIdentity = true;
-  bool initAnimaed = false;
+  bool initAnimated = false;
+  bool gestureEnded = false;
 
   @override
   void initState() {
@@ -32,26 +28,17 @@ class _PrizeItemDetailScreenState extends State<PrizeItemDetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.primaryContainerBg,
-      appBar: AppBar(
-        actions: [
-          IconButton(
-              onPressed: () => _shareOnClick(),
-              icon: const Icon(
-                Icons.ios_share,
-                size: 28,
-                color: AppColor.primary,
-              ))
-        ],
-        backgroundColor: AppColor.primaryBlack,
-        automaticallyImplyLeading: false,
-        leadingWidth: 100,
-        leading: PrizeListNavigationBarTitle(
-            titleText: "奖章",
-            backOnTap: () {
-              Navigator.of(context).pop();
-            },
-            tintColor: AppColor.primary),
-      ),
+      appBar: FAppBar.backTitled("奖章", () {
+        Navigator.of(context).pop();
+      }, [
+        IconButton(
+            onPressed: () => _shareOnClick(),
+            icon: const Icon(
+              Icons.ios_share,
+              size: 28,
+              color: AppColor.primary,
+            ))
+      ]),
       body: SafeArea(
         child: Center(
           child: Column(
@@ -85,15 +72,15 @@ class _PrizeItemDetailScreenState extends State<PrizeItemDetailScreen> {
 
   _buildImage() {
     // 如果动画没有执行过，那么返回自动动画播放，否则进入常规展示
-    if (!initAnimaed) {
-      initAnimaed = true;
+    if (!initAnimated) {
+      initAnimated = true;
       return Padding(
         padding: const EdgeInsets.only(top: 100),
         child: TweenAnimationBuilder(
-            curve: Curves.linearToEaseOut,
+            // curve: Curves.linearToEaseOut,
             tween: Tween(begin: -2.0, end: 2.0),
-            duration: const Duration(milliseconds: 2000),
-            onEnd: (){
+            duration: const Duration(milliseconds: 1000),
+            onEnd: () {
               setState(() {});
             },
             builder: (BuildContext context, value, Widget? child) {
@@ -142,6 +129,7 @@ class _PrizeItemDetailScreenState extends State<PrizeItemDetailScreen> {
           onPanEnd: (details) {
             setState(() {
               isIdentity = true;
+              gestureEnded = true;
               x = 0;
             });
           },
@@ -169,5 +157,6 @@ class _PrizeItemDetailScreenState extends State<PrizeItemDetailScreen> {
   //TODO: 展示苹果分享弹框，分享页
   _shareOnClick() {
     // 点击分享按钮；
+    print("_shareOnClick");
   }
 }
