@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
+		23154DA52AA059788C01DDE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E14E03A92B386CA4B8C6004E /* GoogleService-Info.plist */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
+		5F5038ED2A860C2100935968 /* NativeMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5038EC2A860C2100935968 /* NativeMessenger.swift */; };
+		5F5038F02A860C6200935968 /* BatteryNativeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5038EF2A860C6200935968 /* BatteryNativeProvider.swift */; };
+		5F5038F22A860CF000935968 /* NotificationServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5038F12A860CF000935968 /* NotificationServiceProvider.swift */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
@@ -34,6 +38,9 @@
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 		1DD76A292D4BA1290139D73C /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
+		5F5038EC2A860C2100935968 /* NativeMessenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeMessenger.swift; sourceTree = "<group>"; };
+		5F5038EF2A860C6200935968 /* BatteryNativeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryNativeProvider.swift; sourceTree = "<group>"; };
+		5F5038F12A860CF000935968 /* NotificationServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServiceProvider.swift; sourceTree = "<group>"; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
@@ -46,6 +53,7 @@
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A21A66B4B32DDE873B46A29D /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
 		DFA1FE887057C24DB1CE5064 /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
+		E14E03A92B386CA4B8C6004E /* GoogleService-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Runner/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F60A4CA3D234B6084364F110 /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -61,6 +69,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F5038EB2A860BC800935968 /* Messenger */ = {
+			isa = PBXGroup;
+			children = (
+				5F5038EE2A860C4400935968 /* Providers */,
+				5F5038EC2A860C2100935968 /* NativeMessenger.swift */,
+			);
+			path = Messenger;
+			sourceTree = "<group>";
+		};
+		5F5038EE2A860C4400935968 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				5F5038EF2A860C6200935968 /* BatteryNativeProvider.swift */,
+				5F5038F12A860CF000935968 /* NotificationServiceProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
 		9740EEB11CF90186004384FC /* Flutter */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +106,7 @@
 				97C146EF1CF9000F007C117D /* Products */,
 				F4C4F61AE38E625E4EC6168C /* Pods */,
 				D2EB31E6CF450C6549372472 /* Frameworks */,
+				E14E03A92B386CA4B8C6004E /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +121,7 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				5F5038EB2A860BC800935968 /* Messenger */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
 				97C146FD1CF9000F007C117D /* Assets.xcassets */,
 				97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */,
@@ -191,6 +219,7 @@
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
+				23154DA52AA059788C01DDE2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +305,9 @@
 			files = (
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
+				5F5038F22A860CF000935968 /* NotificationServiceProvider.swift in Sources */,
+				5F5038ED2A860C2100935968 /* NativeMessenger.swift in Sources */,
+				5F5038F02A860C6200935968 /* BatteryNativeProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

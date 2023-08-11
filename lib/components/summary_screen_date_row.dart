@@ -4,7 +4,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
 class SummaryScreenDateRow extends StatelessWidget {
-  const SummaryScreenDateRow({super.key});
+  final VoidCallback avatarOntap;
+  const SummaryScreenDateRow({super.key, required this.avatarOntap});
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +38,7 @@ class SummaryScreenDateRow extends StatelessWidget {
                 width: 32.0,
                 height: 32.0,
                 child: GestureDetector(
+                  onTap: avatarOntap,
                   child: const DecoratedBox(
                     decoration: BoxDecoration(
                       image: DecorationImage(

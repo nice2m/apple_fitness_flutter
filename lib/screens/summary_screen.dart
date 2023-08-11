@@ -1,3 +1,4 @@
+import 'package:apple_fitness_flutter/account_page/screen/account_view.dart';
 import 'package:apple_fitness_flutter/components/prize_title_grid_item_view.dart';
 import 'package:apple_fitness_flutter/components/summary_screen_date_row.dart';
 import 'package:apple_fitness_flutter/components/summary_screen_progress_indicator.dart';
@@ -7,6 +8,7 @@ import 'package:apple_fitness_flutter/screens/prize_icon_detail_screen.dart';
 import 'package:apple_fitness_flutter/screens/prize_icon_list_screen.dart';
 import 'package:apple_fitness_flutter/trend_page/screen/trend_page.dart';
 import 'package:apple_fitness_flutter/utils/app_layout.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SummaryScreen extends StatefulWidget {
@@ -47,7 +49,16 @@ class _SummaryScreenState extends State<SummaryScreen> {
           ),
           SliverList(
             delegate: SliverChildListDelegate([
-              const SummaryScreenDateRow(),
+              SummaryScreenDateRow(avatarOntap: () {
+                showAccount(context);
+
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     fullscreenDialog: true,
+                //     builder: (context){
+                //     return const AccountView();
+                // }));
+              }),
               buildFitRecordRow(context),
               buildTrendRow(context),
               buildOnPrizeIcons(context),
@@ -195,11 +206,8 @@ class _SummaryScreenState extends State<SummaryScreen> {
 
   void _trendOnStartTap() {
     // 跳转trend 趋势页
-    Navigator.of(context).push(
-      MaterialPageRoute(
-          builder: (context) => const TrendPage()
-      )
-    );
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const TrendPage()));
   }
 
   void _onPrizeIconShowMoreTap() {
@@ -217,5 +225,34 @@ class _SummaryScreenState extends State<SummaryScreen> {
         builder: (context) => PrizeItemDetailScreen(entity: prizeItem),
       ),
     );
+  }
+
+  void showAccount(BuildContext context) {
+    // showModalBottomSheet
+    // showGeneralDialog
+    // showGeneralDialog(
+    //     context: context,
+    //     pageBuilder: (BuildContext context, Animation<double> animation,
+    //         Animation<double> secondaryAnimation) {
+    //       return const AccountView();
+    //     });
+
+    showModalBottomSheet(
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(20),
+        ),
+      ),
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      context: context, 
+      builder: (context){
+        // return const AccountView();
+        return const  FractionallySizedBox(
+            heightFactor: 0.9,
+            child: AccountView()
+          );
+    });
   }
 }

@@ -1,7 +1,15 @@
 import 'dart:ffi';
+import 'dart:io';
 
+import 'package:apple_fitness_flutter/account_page/screen/account_view.dart';
 import 'package:apple_fitness_flutter/constant/keys.dart';
+import 'package:apple_fitness_flutter/login_page/screen/login_page.dart';
+import 'package:apple_fitness_flutter/login_page/screen/login_view.dart';
+import 'package:apple_fitness_flutter/logined_page/screen/logined_page.dart';
+import 'package:apple_fitness_flutter/messengers.dart';
+import 'package:apple_fitness_flutter/regist_page/screen/regist_page.dart';
 import 'package:apple_fitness_flutter/screens/grant_notification_screen.dart';
+import 'package:apple_fitness_flutter/verify_email_page/screen/verify_email_page.dart';
 import 'package:flutter/material.dart';
 import 'package:apple_fitness_flutter/screens/share_screen.dart';
 import 'package:apple_fitness_flutter/screens/welcome_screen.dart';
@@ -10,9 +18,14 @@ import 'package:get_storage/get_storage.dart';
 import 'components/fapp_bottom_bar.dart';
 import './utils/app_storage.dart';
 import './constant/keys.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 void main() async {
   await initStorage();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const FApp());
 }
 
@@ -40,13 +53,57 @@ class _FAppState extends State<FApp> {
   FAppScreens screen = FAppScreens.share;
 
   @override
+  void initState() {
+    super.initState();
+    print("FApp.initState");
+
+    
+  }
+
+  @override
+  void didUpdateWidget(covariant FApp oldWidget) {
+    print("didUpdateWidget");
+    // TODO: implement didUpdateWidget
+    super.didUpdateWidget(oldWidget);
+
+   
+  }
+
+  void test(BuildContext context) {
+    NativeMessenger.getBatteryLevel().then((value) {
+      print("NativeMessenger.getBatteryLevel");
+      print("$value");
+    }).onError((error, stackTrace) {
+      print("== onError");
+      print(error.toString());
+      print(stackTrace);
+    });
+  }
+  
+
+  @override
   Widget build(BuildContext context) {
+    
+    var ctext = context;
+
+    Future.delayed(Duration(seconds: 5), () {
+      print("futuer.delayed");
+      test(ctext);
+    });
+
     return MaterialApp(
         color: AppColor.primaryBg,
         debugShowCheckedModeBanner: true,
         home: Builder(builder: (BuildContext context) {
           return getHome(context);
-        }));
+        }),
+        routes: {
+          "/account/": (context) { return const AccountView();},
+          "/login/": (context) => const LoginPage(),
+          "/regist/": (context) => const RegistPage(),
+          "/verifyEmail/": (context) => const VerifyEmailView(),
+          "/logined/": (context) => const LoginedPage()
+        });
   }
 
   Widget getHome(BuildContext context) {
@@ -68,17 +125,16 @@ class _FAppState extends State<FApp> {
         return WelcomeScreen(continueCallBack: () {
           screen = FAppScreens.grantNotification;
           setState(() {
-            updateStorage(shownWelcomeGetStorageKey
-            , "1");
+            updateStorage(shownWelcomeGetStorageKey, "1");
           });
         });
       case FAppScreens.grantNotification:
         return GrantNotificationScreen(continueCallBack: () {
           screen = FAppScreens.normal;
           setState(() {
-            updateStorage(shownGrantNotificationAccessKey
-            , "1");
+            updateStorage(shownGrantNotificationAccessKey, "1");
           });
+          NativeMessenger.getNotificationPermission();
         });
       default:
         return const Text('unknown');

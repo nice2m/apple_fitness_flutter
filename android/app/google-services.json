@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "76264690945",
+    "firebase_url": "https://ntmdev-e248a.firebaseio.com",
+    "project_id": "ntmdev-e248a",
+    "storage_bucket": "ntmdev-e248a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76264690945:android:74c2c309e2117f2a277700",
+        "android_client_info": {
+          "package_name": "com.example.apple_fitness_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "76264690945-5ln7j86dd4p5sih6vceegck5667edg6o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtI41T9v3iqHGtqeuoraSROkw4sbwLgB4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "76264690945-5ln7j86dd4p5sih6vceegck5667edg6o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "76264690945-g4oj25fs9vducckeatk386jrg0mepdh2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.meow.mmgirl-ntm"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
