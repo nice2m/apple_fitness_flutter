@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 enum AppPermissionState {
   notDetermined(0),
@@ -20,6 +19,6 @@ class AppPermission extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    throw Text('');
+    return const Placeholder();
   }
 }

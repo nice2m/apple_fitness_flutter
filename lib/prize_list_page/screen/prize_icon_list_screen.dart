@@ -1,7 +1,7 @@
-import 'package:apple_fitness_flutter/components/fapp_bar.dart';
-import 'package:apple_fitness_flutter/components/prize_title_grid_view.dart';
-import 'package:apple_fitness_flutter/entities/prize_page_item_entity.dart';
-import 'package:apple_fitness_flutter/screens/prize_icon_detail_screen.dart';
+import 'package:apple_fitness_flutter/app_component/view/fapp_bar.dart';
+import 'package:apple_fitness_flutter/prize_list_page/component/prize_title_grid_view.dart';
+import 'package:apple_fitness_flutter/prize_page/entity/prize_page_item_entity.dart';
+import 'package:apple_fitness_flutter/prize_page/screen/prize_icon_detail_screen.dart';
 import 'package:apple_fitness_flutter/utils/app_layout.dart';
 import 'package:flutter/material.dart';
 

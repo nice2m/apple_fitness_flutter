@@ -1,8 +1,8 @@
-import 'package:apple_fitness_flutter/screens/grant_share_records_screen.dart';
-import 'package:apple_fitness_flutter/screens/share_records_screen.dart';
+import 'package:apple_fitness_flutter/grant_notification_page/view/grant_share_records_screen.dart';
+import 'package:apple_fitness_flutter/share_page/screen/share_records_screen.dart';
 import 'package:flutter/material.dart';
+// ignore: implementation_imports
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class ShareScreen extends StatefulWidget {
   const ShareScreen({super.key});

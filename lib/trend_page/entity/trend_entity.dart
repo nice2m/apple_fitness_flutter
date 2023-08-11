@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:apple_fitness_flutter/utils/app_layout.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 
@@ -24,9 +23,7 @@ class TrendSectionEntity {
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['title'] = title;
-    if (items != null) {
-      map['items'] = items.map((v) => v.toJson()).toList();
-    }
+    map['items'] = items.map((v) => v.toJson()).toList();
     return map;
   }
 

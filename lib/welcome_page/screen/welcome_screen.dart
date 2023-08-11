@@ -1,4 +1,4 @@
-import 'package:apple_fitness_flutter/components/welcome_screen_row.dart';
+import 'package:apple_fitness_flutter/welcome_page/component/welcome_screen_row.dart';
 import 'package:apple_fitness_flutter/utils/app_layout.dart';
 import 'package:flutter/material.dart';
 

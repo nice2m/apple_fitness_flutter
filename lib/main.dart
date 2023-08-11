@@ -1,23 +1,16 @@
-import 'dart:ffi';
-import 'dart:io';
-
 import 'package:apple_fitness_flutter/account_page/screen/account_view.dart';
+import 'package:apple_fitness_flutter/app_component/view/fapp_bottom_bar.dart';
 import 'package:apple_fitness_flutter/constant/keys.dart';
+import 'package:apple_fitness_flutter/grant_notification_page/view/grant_notification_screen.dart';
 import 'package:apple_fitness_flutter/login_page/screen/login_page.dart';
-import 'package:apple_fitness_flutter/login_page/screen/login_view.dart';
 import 'package:apple_fitness_flutter/logined_page/screen/logined_page.dart';
-import 'package:apple_fitness_flutter/messengers.dart';
+import 'package:apple_fitness_flutter/app_component/manager/messengers.dart';
 import 'package:apple_fitness_flutter/regist_page/screen/regist_page.dart';
-import 'package:apple_fitness_flutter/screens/grant_notification_screen.dart';
 import 'package:apple_fitness_flutter/verify_email_page/screen/verify_email_page.dart';
 import 'package:flutter/material.dart';
-import 'package:apple_fitness_flutter/screens/share_screen.dart';
-import 'package:apple_fitness_flutter/screens/welcome_screen.dart';
+import 'package:apple_fitness_flutter/welcome_page/screen/welcome_screen.dart';
 import 'package:apple_fitness_flutter/utils/app_layout.dart';
-import 'package:get_storage/get_storage.dart';
-import 'components/fapp_bottom_bar.dart';
 import './utils/app_storage.dart';
-import './constant/keys.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 

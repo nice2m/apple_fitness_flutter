@@ -1,9 +1,7 @@
-import 'package:apple_fitness_flutter/screens/share_screen.dart';
-import 'package:apple_fitness_flutter/screens/summary_screen.dart';
+import 'package:apple_fitness_flutter/summary_screen/screen/summary_screen.dart';
+import 'package:apple_fitness_flutter/share_page/screen/share_screen.dart';
 import 'package:apple_fitness_flutter/utils/app_layout.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class FAppBottomBar extends StatefulWidget {
   const FAppBottomBar({super.key});

@@ -1,4 +1,4 @@
-import 'package:apple_fitness_flutter/components/fapp_bar.dart';
+import 'package:apple_fitness_flutter/app_component/view/fapp_bar.dart';
 import 'package:apple_fitness_flutter/trend_page/component/trend_sections.dart';
 import 'package:apple_fitness_flutter/trend_page/entity/trend_entity.dart';
 import 'package:apple_fitness_flutter/utils/app_layout.dart';

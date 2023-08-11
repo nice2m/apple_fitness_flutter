@@ -1,10 +1,6 @@
-import 'package:apple_fitness_flutter/firebase_options.dart';
-import 'package:apple_fitness_flutter/login_page/screen/login_view.dart';
 import 'package:apple_fitness_flutter/utils/app_layout.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:get_storage/get_storage.dart';
 
 class LoginedPage extends StatefulWidget {
   const LoginedPage({super.key});

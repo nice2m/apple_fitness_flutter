@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import '../utils/app_layout.dart';
+import '../../utils/app_layout.dart';
 
 class WelcomeScreenRow extends StatelessWidget {
   final String assetImgUri;

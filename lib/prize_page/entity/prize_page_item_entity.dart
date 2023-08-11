@@ -27,7 +27,7 @@ class PrizePageItemEntity {
   PrizePageItemEntity({required this.cateId, required this.item});
 
   String get displayName {
-    final cateIdTmp = cateId ?? 0;
+    final cateIdTmp = cateId;
 
     return PrizeCate.values[cateIdTmp].displayName;
   }
@@ -56,9 +56,7 @@ class PrizePageItemEntity {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['cateId'] = this.cateId;
-    if (this.item != null) {
-      data['item'] = this.item!.map((v) => v.toJson()).toList();
-    }
+    data['item'] = this.item.map((v) => v.toJson()).toList();
     return data;
   }
 }

@@ -1,6 +1,4 @@
-import 'dart:ffi';
 import 'dart:io';
-import 'dart:math';
 
 import 'package:flutter/services.dart';
 
@@ -11,7 +9,7 @@ class NativeMessenger {
     try {
       final int result = await platform.invokeMethod('getBatteryLevel');
       return result;
-    } on PlatformException catch (e) {
+    } on PlatformException catch (_) {
       return -1;
     }
   }

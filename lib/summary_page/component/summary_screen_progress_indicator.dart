@@ -1,8 +1,9 @@
-import 'package:apple_fitness_flutter/components/circle_progress_indicator.dart';
+import 'package:apple_fitness_flutter/app_component/view/circle_progress_indicator.dart';
 import 'package:apple_fitness_flutter/utils/app_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
+// ignore: must_be_immutable
 class SummaryScreenProgressIndicator extends StatelessWidget {
   double progress;
   double radius = 60;

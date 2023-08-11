@@ -1,5 +1,5 @@
-import 'package:apple_fitness_flutter/components/fapp_bar.dart';
-import 'package:apple_fitness_flutter/entities/prize_page_item_entity.dart';
+import 'package:apple_fitness_flutter/app_component/view/fapp_bar.dart';
+import 'package:apple_fitness_flutter/prize_page/entity/prize_page_item_entity.dart';
 import 'package:apple_fitness_flutter/utils/app_layout.dart';
 import 'package:flutter/material.dart';
 
